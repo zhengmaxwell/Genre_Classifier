@@ -3,4 +3,4 @@
 **/data
 **.csv
 **/.ipynb_checkpoints
-**/.01_epoch0
+**/*.01_epoch*
