@@ -1,7 +1,8 @@
 **.txt
 **.idea
 **/data
-**.csv
+**/src/Labs/*.csv
+**/src/Tutorials/*/*.csv
 **/.ipynb_checkpoints
 **/*epoch*
 **/Images/**
