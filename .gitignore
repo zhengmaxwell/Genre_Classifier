@@ -1,9 +1,1 @@
-**.txt
-**.idea
-**/data
-**/src/Labs/*.csv
-**/src/Tutorials/*/*.csv
-**/.ipynb_checkpoints
-**/*epoch*
-**/Images/**
-**/SMSSpamCollection
+# TODO add stuff
