@@ -70,17 +70,16 @@ def _getRequest(genre: str, startIndex: int=None) -> Dict[str, str]:
 
         genreUrl = genreUrl[:-1]
 
-        url = f"https://www.googleapis.com/books/v1/volumes?q=subject:{genreUrl}" if not startIndex else f"https://www.googleapis.com/books/v1/volumes?q=subject:{genreUrl}&maxResults=40&startIndex={startIndex}"
+        url = f"https://www.googleapis.com/books/v1/volumes?q=subject:{genreUrl}&printType=books" if not startIndex else f"https://www.googleapis.com/books/v1/volumes?q=subject:{genreUrl}&maxResults=40&startIndex={startIndex}&printType=books"
 
     else:
 
-        url = f"https://www.googleapis.com/books/v1/volumes?q=subject:{genre}" if not startIndex else f"https://www.googleapis.com/books/v1/volumes?q=subject:{genre}&maxResults=40&startIndex={startIndex}"
+        url = f"https://www.googleapis.com/books/v1/volumes?q=subject:{genre}&printType=books" if not startIndex else f"https://www.googleapis.com/books/v1/volumes?q=subject:{genre}&maxResults=40&startIndex={startIndex}&printType=books"
     
     request = urllib.request.urlopen(url)
     data = json.loads(request.read().decode())
 
     return data
-
 
 
 
