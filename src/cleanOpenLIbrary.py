@@ -16,7 +16,7 @@ def _cleanData(title: str, author: str, description: str) -> str:
     cleanString = ''.join(filter(lambda x: x in printable, re.sub('<[^<]+?>', '', description.translate(translator)))) # data cleaning HTML tags and non-ASCII 128 chars
     cleanString = re.sub(r"[,;@#?!&$-]+\ *", " ", cleanString) # removes punctuation
     cleanString = cleanString.replace("\'\'", '') # removes quotes
-    cleanString = cleanString.replace('\"', '')
+    cleanString = cleanString.replace('\"', '') 
 
     cleanDescription = []
 
