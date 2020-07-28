@@ -31,7 +31,7 @@ def toCSV(data: List[Dict[str, str]]) -> None:
 
     keys = data[0].keys()
 
-    outputFile = open(r"openLibraryData.csv", 'w', newline='', encoding="utf-8")
+    outputFile = open(r"data\openLibraryData.csv", 'w', newline='', encoding="utf-8")
 
     writer = csv.DictWriter(outputFile, keys)
     writer.writeheader()
@@ -40,14 +40,14 @@ def toCSV(data: List[Dict[str, str]]) -> None:
 
 if __name__ == "__main__":
 
-    reader = csv.DictReader(open(r"C:\Users\mazheng\Downloads\openLIbraryData.csv", encoding="utf8"))
+    reader = csv.DictReader(open(r"C:\Users\Maxwell\OneDrive\Desktop\openLIbraryData.csv", encoding="utf8"))
 
     cleanedData = []
 
     for row in reader:
         description = _cleanData(row["title"], row["author"], row["description"])
         if description:
-            book = {"description": description, "genre": row["genre"]}
+            book = {"title": row["title"].lower(), "description": description, "genre": row["genre"]}
             cleanedData.append(book)
 
     toCSV(cleanedData)
