@@ -11,10 +11,12 @@ def _cleanData(title: str, author: str, description: str) -> str:
     translator = str.maketrans('', '', escapes)
     printable = set(string.printable)
 
-    badWords = f"{author}|isbn|{title}|new york times|bestseller"
+    badWords = f"{author}|isbn|{title}|new york times|bestseller|provided"
 
     cleanString = ''.join(filter(lambda x: x in printable, re.sub('<[^<]+?>', '', description.translate(translator)))) # data cleaning HTML tags and non-ASCII 128 chars
-    cleanString = cleanString.translate(str.maketrans(' ',' ', string.punctuation))
+    cleanString = re.sub(r"[,;@#?!&$-]+\ *", " ", cleanString) # removes punctuation
+    cleanString = cleanString.replace("\'\'", '') # removes quotes
+    cleanString = cleanString.replace('\"', '')
 
     cleanDescription = []
 
