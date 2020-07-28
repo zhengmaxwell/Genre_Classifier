@@ -49,7 +49,7 @@ if __name__ == "__main__":
     for row in reader:
         description = _cleanData(row["title"], row["author"], row["description"])
         if description:
-            book = {"title": row["title"].lower(), "description": description, "genre": row["genre"]}
+            book = {"title": row["title"].lower().replace(',',''), "description": description, "genre": row["genre"]} # make sure title remove commas
             cleanedData.append(book)
 
     toCSV(cleanedData)
