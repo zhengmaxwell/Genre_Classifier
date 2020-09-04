@@ -67,10 +67,10 @@ Validation Accuracy: 68.6%
 
 **Test Accuracy: 71.1%**
 
-<div style="text-align:center">
+<p align="center">
     <img src="images/training_curve.png" alt="Training Curve" width="400"><br/>
     <em>Figure 3: Final Training Curve</em>
-</div>
+</p>
 
 Our final test accuracy of 71.1% is comparable to the human accuracy of 71.8%. This indicates that our model achieved near human-like performance. 
 
