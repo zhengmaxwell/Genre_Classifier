@@ -39,12 +39,12 @@ Removed from description:
 ### Architecture
 An RNN (Recurrent Neural Network) was chosen due to the language related learning task. GloVe Embeddings were employed to encode the description into word-level tensors. 
 
-<div style="text-align:center">
+<p align="center">
     <img src="images/embedding.png" alt="GloVe Embedding" width="400"><br/>
     <em>Figure 1: Word Embeddings</em><br/><br/>
     <img src="images/rnn.png" alt="RNN" width="400"><br/>
     <em>Figure 2: RNN</em>
-</div>
+</p>
 
 ### Training
 Optimized hyperparameters:
